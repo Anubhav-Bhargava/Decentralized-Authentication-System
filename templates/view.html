@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+
+<title>Blockendance</title>
+
+<body class="blue-grey lighten-4">
+    <h3>Hello {{ name }}, here is the login data</h3>
+    <br />
+    <h6>Date: &emsp; {{ date }}</h6>
+    <br />
+    <br />
+    <div class="input-field col s12">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" value="{{ name }}">
+    </div>
+    <div class="input-field col s12">
+        <label for="number">Username</label>
+        <input type="text" id="username" name="username" value="{{ username }}">
+    </div>
+    
+    <div class="input-field col s12">
+        <label for="year">Password</label>
+        <input type="text" id="password" name="password" value="{{ password }}">
+    </div>
+    <br />
+
+    <button class="btn waves-effect waves-light" type="button" id="button" name="button">Go Back</button>
+    <script type="text/javascript">
+    function goBack() {
+        window.open("/", "_self");
+    }
+    var button = document.getElementById("button");
+    button.addEventListener("click", goBack);
+    </script>
+
+</body>
